@@ -1,5 +1,7 @@
  package com.example.android_kotlin_learning_application
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -19,11 +21,25 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
+        //get button from view and show toast message on button click
         val showToastButton = findViewById<Button>(R.id.buttonToast)
-
         showToastButton.setOnClickListener {
-            Toast.makeText(this,"Hi this is my Toast",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Hi this is toast from kotlin application",Toast.LENGTH_SHORT).show()
+        }
+
+        //get button from view and implement implicit intent on button click
+        val showImplicitIntentButton = findViewById<Button>(R.id.buttonImplicitActivity)
+        showImplicitIntentButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.google.com")
+            startActivity(intent)
+        }
+
+        //get button from view and implement explicit intent on button click
+        val showExplicitIntentButton = findViewById<Button>(R.id.buttonExplicitActivity)
+        showExplicitIntentButton.setOnClickListener {
+            val intent = Intent(this,NewActivity::class.java)
+            startActivity(intent)
         }
     }
 }
