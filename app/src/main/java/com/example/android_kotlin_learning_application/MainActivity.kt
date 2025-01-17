@@ -22,24 +22,26 @@ class MainActivity : AppCompatActivity() {
         }
 
         //get button from view and show toast message on button click
-        val showToastButton = findViewById<Button>(R.id.buttonToast)
+        val showToastButton = findViewById<Button>(R.id.buttonShowToast)
         showToastButton.setOnClickListener {
             Toast.makeText(this,"Hi this is toast from kotlin application",Toast.LENGTH_SHORT).show()
         }
 
+        //get button from view and implement explicit intent on button click
+        val showExplicitIntentButton = findViewById<Button>(R.id.buttonShowExplicitActivity)
+        showExplicitIntentButton.setOnClickListener {
+            val intent = Intent(this,NewActivity::class.java)
+            startActivity(intent)
+        }
+
         //get button from view and implement implicit intent on button click
-        val showImplicitIntentButton = findViewById<Button>(R.id.buttonImplicitActivity)
+        val showImplicitIntentButton = findViewById<Button>(R.id.buttonShowImplicitActivity)
         showImplicitIntentButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("https://www.google.com")
             startActivity(intent)
         }
 
-        //get button from view and implement explicit intent on button click
-        val showExplicitIntentButton = findViewById<Button>(R.id.buttonExplicitActivity)
-        showExplicitIntentButton.setOnClickListener {
-            val intent = Intent(this,NewActivity::class.java)
-            startActivity(intent)
-        }
+
     }
 }
