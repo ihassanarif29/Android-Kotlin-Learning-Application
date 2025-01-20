@@ -42,6 +42,19 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //get button from view and implement implicit intent on button click
+        val showWebViewButon = findViewById<Button>(R.id.buttonShowWebView)
+        showWebViewButon.setOnClickListener {
+           val intent = Intent(this,WebViewActivity::class.java)
+           startActivity(intent)
+        }
+
+        //get button from view and implement implicit intent on button click
+        val showDialogueButton = findViewById<Button>(R.id.buttonShowDialogue)
+        showDialogueButton.setOnClickListener {
+
+        }
+
 
     }
 }
