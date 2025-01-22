@@ -43,6 +43,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         //get button from view and implement implicit intent on button click
+        val showDataTransferExampleButton = findViewById<Button>(R.id.buttonShowDataTransferExample)
+        showDataTransferExampleButton.setOnClickListener {
+            val intent = Intent(this,DataTransferExampleActivity::class.java)
+            startActivity(intent)
+        }
+
+        //get button from view and implement implicit intent on button click
         val showWebViewButon = findViewById<Button>(R.id.buttonShowWebView)
         showWebViewButon.setOnClickListener {
            val intent = Intent(this,WebViewActivity::class.java)
@@ -57,4 +64,29 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+    }
+
+    override fun onStop() {
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
 }
